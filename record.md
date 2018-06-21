@@ -122,6 +122,14 @@
 
   > tcpdump是一个用于截取网络分组，并输出分组内容的工具，简单说就是数据包抓包工具。
 
+  ```bash
+  $ tcpdump -i any port 53 # 打印出所有接口的 53 端口的分组
+  $ tcpdump port 1337 and host 1.2.3.4 # IP 与 端口
+  $ tcpdump -w packets.pcap # 抓包结果写到文件中，可以用 Wireshark 分析
+  ```
+
+  [Link](https://jvns.ca/tcpdump-zine.pdf)
+
 - **strace**
 
   > strace常用来跟踪进程执行时的系统调用和所接收的信号。strace可以跟踪到一个进程产生的系统调用,包括参数，返回值，执行消耗的时间。
@@ -134,7 +142,16 @@
   $ netstat -a # 列出所有端口 (包括监听和未监听的)
   $ netstat -at # 列出所有 tcp 端口
   $ netstat -l # 列出所有有监听的服务状态
+  $ netstat -n # 以数值方式显示地址信息
   ```
+
+- **lsof**
+
+  > 列出打开的文件
+
+- **Wireshark 使用**
+
+  [Link](https://jvns.ca/blog/2018/06/19/what-i-use-wireshark-for/)
 
 ### 2. 一个 TCP 的简单实验
 
